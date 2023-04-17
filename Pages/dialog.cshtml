@@ -1,0 +1,12 @@
+﻿@page
+@model chat.Pages.dialogModel
+@{
+    foreach (var message in Model.messages)
+    {
+        <P>@message.Content</P>
+    }
+}
+<form method="post">
+    <input type="text", asp-for="NewMessage.Content">
+    <button class="btn btn-primary">Send</button>
+</form>

@@ -1,0 +1,7 @@
+D:\Projects\C#\chat\bin\Release\net6.0\publish\chat.exe
+D:\Projects\C#\chat\bin\Release\net6.0\publish\appsettings.Development.json
+D:\Projects\C#\chat\bin\Release\net6.0\publish\appsettings.json
+D:\Projects\C#\chat\bin\Release\net6.0\publish\chat.dll
+D:\Projects\C#\chat\bin\Release\net6.0\publish\chat.deps.json
+D:\Projects\C#\chat\bin\Release\net6.0\publish\chat.runtimeconfig.json
+D:\Projects\C#\chat\bin\Release\net6.0\publish\chat.pdb
