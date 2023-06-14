@@ -7,10 +7,10 @@ namespace chat.Pages
 {
     public class dialogModel : PageModel
     {
-        public List<message> messages = new();
+        public List<Message> messages = new();
         
         [BindProperty]
-        public message NewMessage{get; set;} = new();
+        public Message NewMessage{get; set;} = new();
         public void OnGet()
         {
             messages = messageService.GetAll();
@@ -22,6 +22,7 @@ namespace chat.Pages
             {
                 return Page();
             }
+            NewMessage.SendTime = DateTime.Now;
             messageService.Add(NewMessage);
             return RedirectToAction("Get");
         }

@@ -2,10 +2,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace chat.Models;
 
-public class message
+public class Message
 {
     //public int Id{get; set;}
-    //public string? Time{get; set;}
+    public DateTime SendTime{get; set;}
     [Required]
     public string? Content{get; set;}
     /*public message(string c)
