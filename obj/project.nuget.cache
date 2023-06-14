@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ZV/MeH2fe1nMlEbhkABUYn2KP8uik95qx9FUgPh8+F89NKhsLZHaV+0AZd9tEYoFcwl5sfQBl3Ra9rKyeAsMQ==",
+  "dgSpecHash": "uok3xyI/6A4gqe81iJPZjvZfvB+7pk1jpWhfHfSbnOD7R4Vo1R6SKHx3rTXOOomNGxY2d0LoHzKi/SL+VxybXw==",
   "success": true,
-  "projectFilePath": "D:\\RealProjects\\Chat\\chat.csproj",
+  "projectFilePath": "D:\\Projects\\C#\\Chat\\chat.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tunki\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\tunki\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
