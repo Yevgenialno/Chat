@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projects\C#\Chat
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Projects/C\#/Chat/Pages/ChooseDialogModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hvb3NlRGlhbG9nTW9kZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/C\#/Chat/Pages/dialog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGlhbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -5,9 +5,10 @@ using chat.Services;
 
 namespace chat.Pages
 {
-    public class dialogModel : PageModel
+    public class DialogModel : PageModel
     {
         public List<Message> messages = new();
+        public User? userLoginned;
         
         [BindProperty]
         public Message NewMessage{get; set;} = new();
@@ -25,6 +26,17 @@ namespace chat.Pages
             NewMessage.SendTime = DateTime.Now;
             messageService.Add(NewMessage);
             return RedirectToAction("Get");
+        }
+
+        public IActionResult? OnGetUserLoginned(User user)
+        {
+            if (LoginService.CheckLoginPassword(user.Tag, user.Password) is not null)
+            {
+                userLoginned = user;
+                return null;
+            }
+            else
+                return RedirectToPage("Index");
         }
     }
 }

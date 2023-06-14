@@ -9,3 +9,13 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 <a href="./dialog">Chat</a>
+<p>@Model.LoginMessage</p>
+<form method="post">
+    <p>
+        Username: <input type="text", asp-for="userTag">
+    </p>
+    <p>
+        Password: <input type="text" , asp-for="userPassword">
+    </p>
+    <button class="btn btn-primary">Login</button>
+</form>
