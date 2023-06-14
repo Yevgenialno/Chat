@@ -7,7 +7,7 @@ namespace chat.Models;
 public partial class ChatDbContext : DbContext
 {
     public virtual DbSet<TestTable> TestTables { get; set; }
-    public virtual DbSet<Message> Messages
+    public virtual DbSet<Message> Messages { get; set; }
     public ChatDbContext()
     {
     }

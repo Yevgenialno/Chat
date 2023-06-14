@@ -5,6 +5,8 @@ namespace chat.Models;
 public class Message
 {
     //public int Id{get; set;}
+    [Key]
+    public int Id { get; set; }
     public DateTime SendTime{get; set;}
     [Required]
     public string? Content{get; set;}
