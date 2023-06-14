@@ -5,8 +5,9 @@ namespace chat.Services;
 
 public static class messageService
 {
-    static List<Message> dialog{get;}
-    static DbSet<Message> dialog2 { get; set; }
+    private static List<Message> dialog{get;}
+    private static DbSet<Message> dialog2 { get; set; }
+    //private static DbSet<User> StartedDialogUsers { get; set; }
     static ChatDbContext context { get; set; }
     static int length = 0;
     static messageService()
@@ -28,4 +29,6 @@ public static class messageService
         context.SaveChanges();
         length++;
     }
+
+    //public static List<User> GetUsersStartedDialog() => 
 }

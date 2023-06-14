@@ -10,6 +10,7 @@ namespace chat.Pages
         public DbSet<User>? startedDialogs { get; set; }
         public void OnGet()
         {
+
         }
     }
 }
