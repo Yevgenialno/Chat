@@ -42,4 +42,9 @@ public class IndexModel : PageModel
             return RedirectToPage("ChooseDialogModel", "UserLoginned", loginnedUser);
         }
     }
+
+    public IActionResult OnPostRegister()
+    {
+        return RedirectToPage("RegisterPage");
+    }
 }

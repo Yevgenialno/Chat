@@ -1,0 +1,17 @@
+﻿@page
+@model chat.Pages.RegisterPageModel
+@{
+}
+<p>@Model.LoginMesage</p>
+<form method="post">
+    <p>
+        Username: <input type="text" , asp-for="userTag">
+    </p>
+    <p>
+        Password: <input type="text" , asp-for="userPassword">
+    </p>
+    <p>
+        Confirm password: <input type="text" , asp-for="userPasswordConfirm">
+    </p>
+    <button class="btn btn-primary">Register</button>
+</form>

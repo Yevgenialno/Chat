@@ -6,9 +6,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<a href="./dialog">Chat</a>
 <p>@Model.LoginMessage</p>
 <form method="post">
     <p>
@@ -17,5 +15,6 @@
     <p>
         Password: <input type="text" , asp-for="userPassword">
     </p>
-    <button class="btn btn-primary">Login</button>
+    <button class="btn btn-primary" asp-page-handler="">Login</button>
+    <button asp-page-handler="Register">Create account</button>
 </form>

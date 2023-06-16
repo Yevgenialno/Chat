@@ -9,6 +9,7 @@
 }
 <form method="post">
     <input type="text", asp-for="NewMessageContent">
-    <button class="btn btn-primary">Send</button>
+	<button class="btn btn-primary">Send</button>
+	<p>Your Tag: @Model.userLoginned?.Tag</p>
+    <button asp-page-handler="Back">Back</button>
 </form>
-<p>Your Tag: @Model.userLoginned?.Tag</p>

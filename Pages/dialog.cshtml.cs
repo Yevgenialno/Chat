@@ -10,9 +10,7 @@ namespace chat.Pages
         public List<Message> messages = new();
         public User? userLoginned;
         public User? userAddressee;
-        
-        [BindProperty]
-        public Message NewMessage{get; set;} = new();
+
         [BindProperty]
         public string NewMessageContent { get; set;}
         public void OnGet()
@@ -46,5 +44,10 @@ namespace chat.Pages
             else
                 return RedirectToPage("Index");
         }
+
+        public IActionResult OnPostBack()
+        {
+			return RedirectToPage("ChooseDialogModel", "UserLoginned", new User((string)TempData["UserTag"], (string)TempData["UserPassword"]));
+		}
     }
 }

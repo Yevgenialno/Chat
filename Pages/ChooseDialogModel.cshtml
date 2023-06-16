@@ -5,6 +5,7 @@
 @using chat.Models;
 @using Microsoft.AspNetCore.Mvc.TagHelpers;
 @{
+	<p>@Model.LoginMessage</p>
 	if (Model.startedDialogs is not null)
 		foreach (User u in Model.startedDialogs)
 		{
@@ -16,3 +17,9 @@
 			</form>
 		}
 }
+<form method="post">
+	<p>
+		New chat with: <input type="text" asp-for="NewDialogAddresseeTag">
+	</p>
+	<button class="btn btn-primary" asp-page-handler="CreateDialog">New Chat</button>
+</form>

@@ -1,5 +1,7 @@
+using chat.Migrations;
 using chat.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace chat.Services;
 
@@ -39,5 +41,14 @@ public static class messageService
         context.SaveChanges();
     }
 
+    public static bool DialogExists(string tag1, string tag2) => !context.StartedDialogs.Where(d => d.FirstUser.Tag == tag1 && d.SecondUser.Tag == tag2).IsNullOrEmpty();
+
     public static IQueryable<User> GetUsersStartedDialog(User u) => context.StartedDialogs.Where(d => d.FirstUser == u).Select(d => d.SecondUser);
+
+    public static void StartDialog(string tag1, string tag2)
+    {
+        context.StartedDialogs.Add(new Dialog { FirstUserTag = tag1, SecondUserTag = tag2 });
+		context.StartedDialogs.Add(new Dialog { FirstUserTag = tag2, SecondUserTag = tag1 });
+		context.SaveChanges();
+    }
 }
