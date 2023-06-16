@@ -39,7 +39,7 @@ public class IndexModel : PageModel
         }
         else
         {
-            return RedirectToPage("dialog", "UserLoginned", loginnedUser);
+            return RedirectToPage("ChooseDialogModel", "UserLoginned", loginnedUser);
         }
     }
 }

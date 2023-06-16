@@ -9,30 +9,38 @@ namespace chat.Pages
     {
         public List<Message> messages = new();
         public User? userLoginned;
+        public User? userAddressee;
         
         [BindProperty]
         public Message NewMessage{get; set;} = new();
+        [BindProperty]
+        public string NewMessageContent { get; set;}
         public void OnGet()
         {
-            messages = messageService.GetAll();
+            //messages = messageService.GetDialog(userLoginned, userAddressee);
         }
 
-        public IActionResult OnPost()
+        public IActionResult? OnPost()
         {
-            if(!ModelState.IsValid)
+            /*if(!ModelState.IsValid)
             {
                 return Page();
-            }
-            NewMessage.SendTime = DateTime.Now;
-            messageService.Add(NewMessage);
-            return RedirectToAction("Get");
+            }*/
+            messageService.Add(NewMessageContent, (string)TempData["UserTag"], (string)TempData["UserPassword"], (string)TempData["AddresseeTag"]);
+            return RedirectToPage("dialog", "DialogChosen", routeValues: new { userTag = (string)TempData["UserTag"], userPassword = (string)TempData["UserPassword"], addresseeTag = (string)TempData["AddresseeTag"]});
         }
 
-        public IActionResult? OnGetUserLoginned(User user)
+        public IActionResult? OnGetDialogChosen(string userTag, string userPassword, string addresseeTag)
         {
-            if (LoginService.CheckLoginPassword(user.Tag, user.Password) is not null)
+            userLoginned = LoginService.CheckLoginPassword(userTag, userPassword);
+			if(userLoginned is not null)
             {
-                userLoginned = user;
+				//userLoginned = user1;
+				//userAddressee = user2;
+				TempData["UserTag"] = userTag;
+				TempData["UserPassword"] = userPassword;
+                TempData["AddresseeTag"] = addresseeTag;
+				messages = messageService.GetDialog(userTag, addresseeTag);
                 return null;
             }
             else

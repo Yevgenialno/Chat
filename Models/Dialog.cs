@@ -13,8 +13,8 @@ namespace chat.Models
 
 		public Dialog(User firstUser, User secondUser)
 		{
-			FirstUser = firstUser;
-			SecondUser = secondUser;
+			//FirstUser = firstUser;
+			//SecondUser = secondUser;
 		}
 	}
 }

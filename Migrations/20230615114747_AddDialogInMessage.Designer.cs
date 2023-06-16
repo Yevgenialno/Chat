@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using chat.Models;
 
@@ -11,9 +12,11 @@ using chat.Models;
 namespace chat.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    partial class ChatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230615114747_AddDialogInMessage")]
+    partial class AddDialogInMessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,19 +33,17 @@ namespace chat.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("FirstUserTag")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("FirstUserId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("SecondUserTag")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("SecondUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FirstUserTag");
+                    b.HasIndex("FirstUserId");
 
-                    b.HasIndex("SecondUserTag");
+                    b.HasIndex("SecondUserId");
 
                     b.ToTable("StartedDialogs");
                 });
@@ -59,22 +60,15 @@ namespace chat.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ReceiverTag")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("DialogId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("SendTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SenderTag")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ReceiverTag");
-
-                    b.HasIndex("SenderTag");
+                    b.HasIndex("DialogId");
 
                     b.ToTable("Messages");
                 });
@@ -102,13 +96,19 @@ namespace chat.Migrations
 
             modelBuilder.Entity("chat.Models.User", b =>
                 {
-                    b.Property<string>("Tag")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Tag");
+                    b.Property<string>("Tag")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
@@ -117,13 +117,13 @@ namespace chat.Migrations
                 {
                     b.HasOne("chat.Models.User", "FirstUser")
                         .WithMany()
-                        .HasForeignKey("FirstUserTag")
+                        .HasForeignKey("FirstUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("chat.Models.User", "SecondUser")
                         .WithMany()
-                        .HasForeignKey("SecondUserTag")
+                        .HasForeignKey("SecondUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -134,21 +134,13 @@ namespace chat.Migrations
 
             modelBuilder.Entity("chat.Models.Message", b =>
                 {
-                    b.HasOne("chat.Models.User", "Receiver")
+                    b.HasOne("chat.Models.Dialog", "Dialog")
                         .WithMany()
-                        .HasForeignKey("ReceiverTag")
+                        .HasForeignKey("DialogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("chat.Models.User", "Sender")
-                        .WithMany()
-                        .HasForeignKey("SenderTag")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Receiver");
-
-                    b.Navigation("Sender");
+                    b.Navigation("Dialog");
                 });
 #pragma warning restore 612, 618
         }

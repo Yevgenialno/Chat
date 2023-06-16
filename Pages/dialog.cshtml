@@ -1,13 +1,14 @@
 ﻿@page
 @model chat.Pages.DialogModel
 @{
-    foreach (var message in Model.messages)
-    {
-        <P>@message.Content</P>
-    }
+    if(Model.messages is not null)
+        foreach (var message in Model.messages)
+        {
+            <P>@message.Content</P>
+        }
 }
 <form method="post">
-    <input type="text", asp-for="NewMessage.Content">
+    <input type="text", asp-for="NewMessageContent">
     <button class="btn btn-primary">Send</button>
 </form>
 <p>Your Tag: @Model.userLoginned?.Tag</p>
