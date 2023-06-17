@@ -4,22 +4,24 @@
 
 @using chat.Models;
 @using Microsoft.AspNetCore.Mvc.TagHelpers;
-@{
-	<p>@Model.LoginMessage</p>
-	if (Model.startedDialogs is not null)
-		foreach (User u in Model.startedDialogs)
-		{
-			<form method="post">
+<div class="text-center">
+	@{
+		<p>@Model.LoginMessage</p>
+		if (Model.startedDialogs is not null)
+			foreach (User u in Model.startedDialogs)
+			{
+				<form method="post">
 
-				<button value=@u.Tag class="btn btn-primary" asp-route-value="@u.Tag">@u.Tag</button>
-				<input type="hidden" name="tag" value="@u.Tag"/>
-				<br>
-			</form>
-		}
-}
-<form method="post">
-	<p>
-		New chat with: <input type="text" asp-for="NewDialogAddresseeTag">
-	</p>
-	<button class="btn btn-primary" asp-page-handler="CreateDialog">New Chat</button>
-</form>
+					<button value=@u.Tag class="btn btn-primary" asp-route-value="@u.Tag">@u.Tag</button>
+					<input type="hidden" name="tag" value="@u.Tag"/>
+					<br>
+				</form>
+			}
+	}
+	<form method="post">
+		<p>
+			New chat with: <input type="text" asp-for="NewDialogAddresseeTag">
+		</p>
+		<button class="btn btn-primary" asp-page-handler="CreateDialog">New Chat</button>
+	</form>
+</div>
