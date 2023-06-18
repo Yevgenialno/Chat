@@ -1,11 +1,13 @@
 ﻿@page
 @model chat.Pages.DialogModel
 <div class="text-center">
+    <h2 class="display-4">Chat with @Model.AddresseeTag</h2>
     @{
         if(Model.messages is not null)
             foreach (var message in Model.messages)
             {
-                <P>@message.Content</P>
+                string messageClass = Model.GetMessageClass(message);
+                <div class=@messageClass>@message.Content</div>
             }
     }
     <form method="post">

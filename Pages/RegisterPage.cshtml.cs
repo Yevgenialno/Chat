@@ -39,5 +39,10 @@ namespace chat.Pages
             LoginService.Register(userTag, userPassword);
             return RedirectToPage("ChooseDialogModel", "UserRegistered", new User(userTag, userPassword));
         }
+
+        public IActionResult OnPostBack()
+        {
+            return RedirectToPage("Index");
+        }
     }
 }

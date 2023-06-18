@@ -6,15 +6,17 @@
 @using Microsoft.AspNetCore.Mvc.TagHelpers;
 <div class="text-center">
 	@{
+		<h2 class="display-4">Your messages</h2>
 		<p>@Model.LoginMessage</p>
 		if (Model.startedDialogs is not null)
 			foreach (User u in Model.startedDialogs)
 			{
 				<form method="post">
 
-					<button value=@u.Tag class="btn btn-primary" asp-route-value="@u.Tag">@u.Tag</button>
+					<button value=@u.Tag class="btn btn-secondary" asp-route-value="@u.Tag">@u.Tag</button>
 					<input type="hidden" name="tag" value="@u.Tag"/>
 					<br>
+					<hr>
 				</form>
 			}
 	}
@@ -23,5 +25,6 @@
 			New chat with: <input type="text" asp-for="NewDialogAddresseeTag">
 		</p>
 		<button class="btn btn-primary" asp-page-handler="CreateDialog">New Chat</button>
+		<button class="btn btn-secondary" asp-page-handler="LogOut">Log Out</button>
 	</form>
 </div>

@@ -24,3 +24,14 @@ body {
     transform: translate(-50%,0%);
     background-color: #76D4F0;
 }
+
+.myMessage {
+    background-color: blueviolet;
+    color: white;
+    text-align: right;
+}
+
+.otherMessage {
+    background-color: beige;
+    text-align: left;
+}

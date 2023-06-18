@@ -3,6 +3,7 @@
 @{
 }
 <div class="text-center">
+    <h1 class="display-4">Creating account</h1>
     <p>@Model.LoginMesage</p>
     <form method="post">
         <p>
@@ -15,5 +16,6 @@
             Confirm password: <input type="text" , asp-for="userPasswordConfirm">
         </p>
         <button class="btn btn-primary">Register</button>
+        <button class="btn btn-secondary" asp-page-handler="Back">Back</button>
     </form>
 </div>
