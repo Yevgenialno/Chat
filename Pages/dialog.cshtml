@@ -7,7 +7,13 @@
             foreach (var message in Model.messages)
             {
                 string messageClass = Model.GetMessageClass(message);
-                <div class=@messageClass>@message.Content</div>
+                <div class=@messageClass>
+                    @message.Content
+                    if(messageClass == "myMessage")
+                    {
+                        <form method="delete"><button class="fa fa-trash"></button></form>
+                    }
+                </div>
             }
     }
     <form method="post">
