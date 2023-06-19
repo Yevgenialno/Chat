@@ -9,49 +9,49 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = chat
 build_property.RootNamespace = chat
-build_property.ProjectDir = D:\Projects\C#\Chat\
+build_property.ProjectDir = d:\Projects\C#\Chat\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Projects\C#\Chat
+build_property.MSBuildProjectDirectory = d:\Projects\C#\Chat
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Projects/C\#/Chat/Pages/ChooseDialogModel.cshtml]
+[d:/Projects/C\#/Chat/Pages/ChooseDialogModel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hvb3NlRGlhbG9nTW9kZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/dialog.cshtml]
+[d:/Projects/C\#/Chat/Pages/dialog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGlhbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/Error.cshtml]
+[d:/Projects/C\#/Chat/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/Index.cshtml]
+[d:/Projects/C\#/Chat/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/Privacy.cshtml]
+[d:/Projects/C\#/Chat/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/RegisterPage.cshtml]
+[d:/Projects/C\#/Chat/Pages/RegisterPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[d:/Projects/C\#/Chat/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/_ViewImports.cshtml]
+[d:/Projects/C\#/Chat/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/_ViewStart.cshtml]
+[d:/Projects/C\#/Chat/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/C\#/Chat/Pages/Shared/_Layout.cshtml]
+[d:/Projects/C\#/Chat/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5l77w7ypdz

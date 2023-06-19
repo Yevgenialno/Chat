@@ -14,5 +14,24 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  justify-content: center;
+}
+
+.text-center {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    background-color: #76D4F0;
+}
+
+.myMessage {
+    background-color: blueviolet;
+    color: white;
+    text-align: right;
+}
+
+.otherMessage {
+    background-color: beige;
+    text-align: left;
 }
