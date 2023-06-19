@@ -1,15 +1,19 @@
 ﻿@page
 @model chat.Pages.DialogModel
-@{
-    if(Model.messages is not null)
-        foreach (var message in Model.messages)
-        {
-            <P>@message.Content</P>
-        }
-}
-<form method="post">
-    <input type="text", asp-for="NewMessageContent">
-	<button class="btn btn-primary">Send</button>
-	<p>Your Tag: @Model.userLoginned?.Tag</p>
-    <button asp-page-handler="Back">Back</button>
-</form>
+<div class="text-center">
+    <h2 class="display-4">Chat with @Model.AddresseeTag</h2>
+    @{
+        if(Model.messages is not null)
+            foreach (var message in Model.messages)
+            {
+                string messageClass = Model.GetMessageClass(message);
+                <div class=@messageClass>@message.Content</div>
+            }
+    }
+    <form method="post">
+        <input type="text", asp-for="NewMessageContent">
+	    <button class="btn btn-primary">Send</button>
+	    <p>Your Tag: @Model.userLoginned?.Tag</p>
+        <button asp-page-handler="Back">Back</button>
+    </form>
+</div>

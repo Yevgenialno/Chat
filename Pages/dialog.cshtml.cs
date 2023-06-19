@@ -9,7 +9,7 @@ namespace chat.Pages
     {
         public List<Message> messages = new();
         public User? userLoginned;
-        public User? userAddressee;
+        public string AddresseeTag;
 
         [BindProperty]
         public string NewMessageContent { get; set;}
@@ -39,6 +39,7 @@ namespace chat.Pages
 				TempData["UserPassword"] = userPassword;
                 TempData["AddresseeTag"] = addresseeTag;
 				messages = messageService.GetDialog(userTag, addresseeTag);
+                AddresseeTag = addresseeTag;
                 return null;
             }
             else
@@ -49,5 +50,17 @@ namespace chat.Pages
         {
 			return RedirectToPage("ChooseDialogModel", "UserLoginned", new User((string)TempData["UserTag"], (string)TempData["UserPassword"]));
 		}
+
+        public string GetMessageClass(Message m)
+        {
+            if(m.SenderTag == userLoginned.Tag)
+            {
+                return "myMessage";
+            }
+            else
+            {
+                return "otherMessage";
+            }
+        }
     }
 }

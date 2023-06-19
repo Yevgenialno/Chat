@@ -1,22 +1,18 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
-<div>
-    <p>@Model.LoginMessage</p>
-    <form method="post">
-        <p>
-            Username: <input type="text", asp-for="userTag">
-        </p>
-        <p>
-            Password: <input type="text" , asp-for="userPassword">
-        </p>
-        <button class="btn btn-primary" asp-page-handler="">Login</button>
-        <button asp-page-handler="Register">Create account</button>
-    </form>
-</div>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>@Model.LoginMessage</p>
+        <form method="post">
+            <p>
+                Username: <input type="text", asp-for="userTag">
+            </p>
+            <p>
+                Password: <input type="text" , asp-for="userPassword">
+            </p>
+            <button class="btn btn-primary" asp-page-handler="">Login</button>
+            <button class="btn btn-secondary" asp-page-handler="Register">Create account</button>
+        </form>
+    </div>
+</body>

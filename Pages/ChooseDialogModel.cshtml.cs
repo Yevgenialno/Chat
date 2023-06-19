@@ -22,7 +22,7 @@ namespace chat.Pages
 		{
 			if (LoginService.CheckLoginPassword(user.Tag, user.Password) is not null)
 			{
-				LoginMessage = "Loginned succesfully";
+				LoginMessage = $"Loginned succesfully as {user.Tag}";
 				TempData["UserTag"] = user.Tag;
 				TempData["UserPassword"] = user.Password;
 				userLoginned = user;
@@ -37,7 +37,7 @@ namespace chat.Pages
 		{
             if (LoginService.CheckLoginPassword(user.Tag, user.Password) is not null)
             {
-				LoginMessage = "Registered succesfully";
+				LoginMessage = $"Registered succesfully as {user.Tag}";
                 TempData["UserTag"] = user.Tag;
                 TempData["UserPassword"] = user.Password;
                 userLoginned = user;
@@ -72,6 +72,11 @@ namespace chat.Pages
 					return Page();
 				}
 			}
+		}
+
+		public IActionResult OnPostLogOut()
+		{
+			return RedirectToPage("index");
 		}
 	}
 }
