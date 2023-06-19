@@ -7,17 +7,13 @@ namespace chat.Services;
 
 public static class messageService
 {
-    private static List<Message> dialog{get;}
+    //private static List<Message> dialog{get;}
     private static DbSet<Message> AllMessages { get; set; }
     //private static DbSet<User> StartedDialogUsers { get; set; }
     static ChatDbContext context { get; set; }
     static messageService()
     {
         context = new ChatDbContext();
-        dialog = new List<Message>
-        {
-            new Message{Content="m1"}
-        };
         AllMessages = context.Messages;
     }
 
@@ -50,5 +46,11 @@ public static class messageService
         context.StartedDialogs.Add(new Dialog { FirstUserTag = tag1, SecondUserTag = tag2 });
 		context.StartedDialogs.Add(new Dialog { FirstUserTag = tag2, SecondUserTag = tag1 });
 		context.SaveChanges();
+    }
+
+    public static void DeleteMessage(int messageId)
+    {
+        AllMessages.Remove(AllMessages.Single(m => m.Id == messageId));
+        context.SaveChanges();
     }
 }

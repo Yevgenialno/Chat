@@ -7,7 +7,22 @@
             foreach (var message in Model.messages)
             {
                 string messageClass = Model.GetMessageClass(message);
-                <div class=@messageClass>@message.Content</div>
+                <div class=@messageClass>
+                    @{
+                        if(messageClass == "myMessage")
+                        {
+                            <form method="post">
+                                @message.Content
+                                <button class="btn btn-primary" value=@message.Id asp-page-handler="DeleteMessage">&#xf1f8</button>
+                                <input type="hidden" name="messageId" value="@message.Id" />
+                            </form>
+                        }
+                        else
+                        {
+                            @message.Content
+                        }
+                    }
+                </div>
             }
     }
     <form method="post">

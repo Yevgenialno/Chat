@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using chat.Models;
 using chat.Services;
+using Azure;
 
 namespace chat.Pages
 {
@@ -50,6 +51,12 @@ namespace chat.Pages
         {
 			return RedirectToPage("ChooseDialogModel", "UserLoginned", new User((string)TempData["UserTag"], (string)TempData["UserPassword"]));
 		}
+
+        public IActionResult OnPostDeleteMessage(int messageId)
+        {
+            messageService.DeleteMessage(messageId);
+            return RedirectToPage("dialog", "DialogChosen", new { userTag = (string)TempData["UserTag"], userPassword = (string)TempData["UserPassword"], addresseeTag = (string)TempData["AddresseeTag"] });
+        }
 
         public string GetMessageClass(Message m)
         {
