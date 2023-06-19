@@ -1,32 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\C#\\Chat\\chat.csproj": {}
+    "D:\\RealProjects\\Chat\\chat.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\C#\\Chat\\chat.csproj": {
+    "D:\\RealProjects\\Chat\\chat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\Chat\\chat.csproj",
+        "projectUniqueName": "D:\\RealProjects\\Chat\\chat.csproj",
         "projectName": "chat",
-        "projectPath": "D:\\Projects\\C#\\Chat\\chat.csproj",
+        "projectPath": "D:\\RealProjects\\Chat\\chat.csproj",
         "packagesPath": "C:\\Users\\tunki\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\Chat\\obj\\",
+        "outputPath": "D:\\RealProjects\\Chat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\VisualStudio\\VS\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\tunki\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },

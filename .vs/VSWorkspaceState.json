@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Pages"
+    "\\Services"
   ],
-  "SelectedNode": "\\.gitattributes",
+  "SelectedNode": "\\Services\\messageService.cs",
   "PreviewInSolutionExplorer": false
 }
