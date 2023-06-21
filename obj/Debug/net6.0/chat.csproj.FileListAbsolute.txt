@@ -85,3 +85,9 @@ D:\Projects\C#\Chat\obj\Debug\net6.0\refint\chat.dll
 D:\Projects\C#\Chat\obj\Debug\net6.0\chat.pdb
 D:\Projects\C#\Chat\obj\Debug\net6.0\chat.genruntimeconfig.cache
 D:\Projects\C#\Chat\obj\Debug\net6.0\ref\chat.dll
+D:\Projects\C#\Chat\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Projects\C#\Chat\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Projects\C#\Chat\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Projects\C#\Chat\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Projects\C#\Chat\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Projects\C#\Chat\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
